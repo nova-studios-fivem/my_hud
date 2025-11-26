@@ -1,0 +1,110 @@
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#hud {
+    position: absolute;
+    top: 75%;
+    transform: scale(0.60);
+    transform-origin: top left;
+    transition: left 0.6s ease, opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    width: 6.5%;
+}
+
+#hud.hud-left {
+    left: 2%;
+}
+
+#hud.hud-center {
+    left: 18%;
+}
+
+
+
+
+.status-item {
+    display: flex;
+    margin-bottom: 10px; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+.status-item:not(:last-child) {
+    margin-bottom: 10px; 
+}
+
+
+
+.circle {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.5));
+
+    text-shadow: 0 0 10px rgb(27, 27, 27);
+}
+
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 0px;
+    filter: drop-shadow(0 0 3px black);
+}
+
+#hud.hidden {
+    display: none;
+}
+
+:root {
+    --health-color: #f2c35b;
+    --armor-color: #b9a6ff;
+    --hunger-color: #5ed4ff;
+    --thirst-color: #4ff87a;
+    --stamina-color: #ffffff;
+
+    --circle-size: 55px;
+    --circle-border: 3px;
+}
+
+#health .circle {
+    background: linear-gradient(135deg, rgba(242,195,91,0.25), rgba(242,195,91,0.55));
+    border: var(--circle-border) solid var(--health-color);
+}
+
+#armor .circle {
+    background: linear-gradient(135deg, rgba(185,166,255,0.25), rgba(185,166,255,0.55));
+    border: var(--circle-border) solid var(--armor-color);
+}
+
+#hunger .circle {
+    background: linear-gradient(135deg, rgba(94,212,255,0.25), rgba(94,212,255,0.55));
+    border: var(--circle-border) solid var(--hunger-color);
+}
+
+#thirst .circle {
+    background: linear-gradient(135deg, rgba(79,248,122,0.25), rgba(79,248,122,0.55));
+    border: var(--circle-border) solid var(--thirst-color);
+}
+
+#stamina .circle {
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.55));
+    border: var(--circle-border) solid var(--stamina-color);
+}
